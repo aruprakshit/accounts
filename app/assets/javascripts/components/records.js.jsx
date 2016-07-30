@@ -64,13 +64,37 @@ var Records = React.createClass({
                     <RecordForm handleNewRecord={this.addRecord}/>
                 </div>
                 <hr/>
-                <table className='table table-bordered'>
+                <table className='table table-bordered records-table'>
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Title</th>
-                            <th>Amount</th>
-                            <th>Actions</th>
+                            <th className='text-center'>
+                                <div className='sorts-label'>
+                                    <span>Date</span>
+                                </div>
+                                <div className='sorts-icons'>
+                                    <span className="glyphicon glyphicon-triangle-top"></span>
+                                    <span className="glyphicon glyphicon-triangle-bottom"></span>
+                                </div>
+                            </th>
+                            <th className='text-center'>
+                                <div className='sorts-label'>
+                                    <span>Title</span>
+                                </div>
+                                <div className='sorts-icons'>
+                                    <span className="glyphicon glyphicon-triangle-top"></span>
+                                    <span className="glyphicon glyphicon-triangle-bottom"></span>
+                                </div>
+                            </th>
+                            <th className='text-center'>
+                                <div className='sorts-label'>
+                                    <span>Amount</span>
+                                </div>
+                                <div className='sorts-icons'>
+                                    <span className="glyphicon glyphicon-triangle-top"></span>
+                                    <span className="glyphicon glyphicon-triangle-bottom"></span>
+                                </div>
+                            </th>
+                            <th className='text-center'><div className='actions'>Actions</div></th>
                         </tr>
                     </thead>
                     <tbody>

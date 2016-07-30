@@ -13,3 +13,27 @@
 .amount-header, .amount-content {
   display: block;
 }
+
+.sorts-icons {
+  display: inline-block;
+  margin-left: 2%;
+
+  .glyphicon {
+    display: block;
+  }
+}
+
+.sorts-label {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  height: 2.6em;
+}
+
+.actions {
+    height: 2.6em;
+}
+
+.records-table thead {
+  
+}
