@@ -44,6 +44,14 @@ var Records = React.createClass({
         var records = React.addons.update(this.state.records, { $splice: [[index, 1, data]] });
         this.replaceState({records: records});
     },
+    orderBy: function (columnName, direction) {
+        if (direction === 'asc') {
+            var records = orderInAsc(this.state.records, columnName);
+        } else if (direction === 'desc') {
+            var records = orderInDesc(this.state.records, columnName);
+        }
+        this.setState({records: records});
+    },
     render: function() {
         var recordRow = this.state.records.map(function (record) {
             return <Record
@@ -72,8 +80,12 @@ var Records = React.createClass({
                                     <span>Date</span>
                                 </div>
                                 <div className='sorts-icons'>
-                                    <span className="glyphicon glyphicon-triangle-top"></span>
-                                    <span className="glyphicon glyphicon-triangle-bottom"></span>
+                                    <span
+                                        className="glyphicon glyphicon-triangle-top"
+                                        onClick={ this.orderBy.bind(this, 'date', 'asc') } />
+                                    <span
+                                        className="glyphicon glyphicon-triangle-bottom"
+                                        onClick={ this.orderBy.bind(this, 'date', 'desc') } />
                                 </div>
                             </th>
                             <th className='text-center'>
@@ -81,8 +93,12 @@ var Records = React.createClass({
                                     <span>Title</span>
                                 </div>
                                 <div className='sorts-icons'>
-                                    <span className="glyphicon glyphicon-triangle-top"></span>
-                                    <span className="glyphicon glyphicon-triangle-bottom"></span>
+                                    <span
+                                        className="glyphicon glyphicon-triangle-top"
+                                        onClick={ this.orderBy.bind(this, 'title', 'asc') } />
+                                    <span
+                                        className="glyphicon glyphicon-triangle-bottom"
+                                        onClick={ this.orderBy.bind(this, 'title', 'desc') } />
                                 </div>
                             </th>
                             <th className='text-center'>
@@ -90,8 +106,12 @@ var Records = React.createClass({
                                     <span>Amount</span>
                                 </div>
                                 <div className='sorts-icons'>
-                                    <span className="glyphicon glyphicon-triangle-top"></span>
-                                    <span className="glyphicon glyphicon-triangle-bottom"></span>
+                                    <span
+                                        className="glyphicon glyphicon-triangle-top"
+                                        onClick={ this.orderBy.bind(this, 'amount', 'asc') } />
+                                    <span
+                                        className="glyphicon glyphicon-triangle-bottom"
+                                        onClick={ this.orderBy.bind(this, 'amount', 'desc') } />
                                 </div>
                             </th>
                             <th className='text-center'><div className='actions'>Actions</div></th>
