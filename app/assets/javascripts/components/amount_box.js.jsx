@@ -4,8 +4,12 @@ var AmountBox = React.createClass({
         return (
             <div className='col-md-4'>
                 <div className={ "panel panel-" + this.props.type }>
-                    <div className='panel-heading'> { this.props.text }</div>
-                    <div className='panel-body'> { amountFormat(this.props.amount) } </div>
+                    <div className='panel-heading'>
+                        <span className='text-uppercase text-center amount-header'> { this.props.text } </span>
+                    </div>
+                    <div className='panel-body'>
+                        <span className='amount-content text-center'> { amountFormat(this.props.amount) } </span>
+                    </div>
                 </div>
             </div>
         );

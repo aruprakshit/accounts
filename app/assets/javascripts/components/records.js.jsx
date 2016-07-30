@@ -56,10 +56,13 @@ var Records = React.createClass({
         return (
             <div className="records">
                 <h2 className="title">Records</h2>
-                <AmountBox type='success' amount={ this.credits() }> Credit </AmountBox>
-                <AmountBox type='danger' amount={ this.debits() }> Debit </AmountBox>
-                <AmountBox type='info' amount={ this.balance() }> Balance </AmountBox>
-                <RecordForm handleNewRecord={this.addRecord}/>
+                <AmountBox type='success' amount={ this.credits() } text='credit'/>
+                <AmountBox type='danger' amount={ this.debits() } text='debit'/>
+                <AmountBox type='info' amount={ this.balance() } text='balance'/>
+                <div>
+                    <h2> Create Record </h2>
+                    <RecordForm handleNewRecord={this.addRecord}/>
+                </div>
                 <hr/>
                 <table className='table table-bordered'>
                     <thead>

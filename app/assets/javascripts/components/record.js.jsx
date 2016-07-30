@@ -28,8 +28,12 @@ var Record = React.createClass({
                 <td> { this.props.record.title }</td>
                 <td> { amountFormat(this.props.record.amount) }</td>
                 <td>
-                    <a className='btn btn-primary col-md-2' onClick={this.handleToggle}> Edit </a>
-                    <a className='btn btn-danger col-md-2 btn-gaps' onClick={this.handleDelete}> Delete</a>
+                    <a className='btn btn-primary col-md-1' onClick={this.handleToggle}>
+                         <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                      </a>
+                    <a className='btn btn-danger col-md-1 btn-gaps' onClick={this.handleDelete}>
+                        <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
                 </td>
             </tr>
         );
