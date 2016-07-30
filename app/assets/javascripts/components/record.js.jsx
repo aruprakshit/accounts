@@ -28,7 +28,7 @@ var Record = React.createClass({
                 <td> { this.props.record.title }</td>
                 <td> { amountFormat(this.props.record.amount) }</td>
                 <td>
-                    <a className='btn btn-default col-md-2' onClick={this.handleToggle}> Edit </a>
+                    <a className='btn btn-primary col-md-2' onClick={this.handleToggle}> Edit </a>
                     <a className='btn btn-danger col-md-2 btn-gaps' onClick={this.handleDelete}> Delete</a>
                 </td>
             </tr>
@@ -41,7 +41,7 @@ var Record = React.createClass({
             date:  this.refs.date.value,
             amount: this.refs.amount.value
         };
-        
+
         $.ajax({
             method: 'put',
             url: "/records/" + this.props.record.id,
@@ -77,7 +77,7 @@ var Record = React.createClass({
                         ref='amount'/>
                 </td>
                 <td>
-                    <a className='btn col-md-2 btn-default' onClick={this.handleEdit}> Update </a>
+                    <a className='btn col-md-2 btn-success' onClick={this.handleEdit}> Update </a>
                     <a className='btn col-md-2 btn-danger btn-gaps' onClick={this.handleToggle}> Cancel </a>
                 </td>
             </tr>
