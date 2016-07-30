@@ -23,7 +23,7 @@ var RecordForm = React.createClass({
     },
     render: function() {
         return (
-            <form className='form-inline' onSubmit={this.handleSubmit}>
+            <form className='form-inline new-record' onSubmit={this.handleSubmit}>
                 <div className='form-group'>
                     <input type='text'
                         className='form-control'
@@ -51,12 +51,14 @@ var RecordForm = React.createClass({
                         onChange={this.handleChange}
                         />
                 </div>
-                <button
-                    type='submit'
-                    className='btn btn-primary'
-                    disabled={ !this.valid() }>
-                    Create record
-                </button>
+                <div className='form-group'>
+                    <button
+                        type='submit'
+                        className='btn btn-primary'
+                        disabled={ !this.valid() }>
+                        Create record
+                    </button>
+                </div>
             </form>
         );
     }

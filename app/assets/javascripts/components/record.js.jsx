@@ -34,25 +34,46 @@ var Record = React.createClass({
             </tr>
         );
     },
+    handleEdit: function (e) {
+        e.preventDefault();
+        var data = {
+            title: this.refs.title.value,
+            date:  this.refs.date.value,
+            amount: this.refs.amount.value
+        };
+        
+        $.ajax({
+            method: 'put',
+            url: "/records/" + this.props.record.id,
+            dataType: 'json',
+            data: {
+                record: data
+            },
+            success: function (data) {
+                this.setState({edit: false});
+                this.props.handleEditRecord(this.props.record, data);
+            }.bind(this)
+        });
+    },
     recordForm: function () {
         return (
             <tr>
                 <td>
                     <input className='form-control'
                         type='text'
-                        defaultValue={this.props.date}
+                        defaultValue={this.props.record.date}
                         ref='date'/>
                 </td>
                 <td>
                     <input className='form-control'
                         type='text'
-                        defaultValue={this.props.title}
+                        defaultValue={this.props.record.title}
                         ref='title'/>
                 </td>
                 <td>
                     <input className='form-control'
                         type='number'
-                        defaultValue={this.props.amount}
+                        defaultValue={this.props.record.amount}
                         ref='amount'/>
                 </td>
                 <td>
